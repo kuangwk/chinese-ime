@@ -210,7 +210,6 @@ var _callbacks_ = {
             self.reposition(self.$toolbar);
 
             if (self.options.allowHide) {
-                
                 var $hide = self.$active;
                 $hide.appendTo(self.$toolbar);
                 $hide.find('input').click(function(){
@@ -222,6 +221,11 @@ var _callbacks_ = {
                     }
                     self.$el.focus();
                 });
+                $(document).on('keydown', function(event){
+                  if(event.keyCode === 16){
+                    $hide.find('input').trigger('click')
+                  }
+                })
             }
 
             if (self.options.input.allowChange){
