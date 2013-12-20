@@ -1,52 +1,78 @@
+<!doctype html>
 <html>
-<head>
-    <title>Chinese Input Method Editor (IME) - A Free, Open-Source JavaScript jQuery plugin for Online Chinese Typing</title>
-    <meta name="description" content="A free and open-source site for typing Pinyin and getting either simplified or traditional characters. Available for direct online use, or as a jQuery plugin." />
-    <meta name="keywords" content="chinese, typing, input, ime, input method, javascript, jQuery, pinyin, zhuyin, bopomofo, simplified, traditional, mandarin, language, tool, application, 輸入法, 键入中文, 輸入普通话" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Chinese-ime by kuangwk</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="canonical" href="http://www.chinese-ime.com" />
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/kuangwk/chinese-ime">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/kuangwk/chinese-ime/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/kuangwk/chinese-ime/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <meta name="http-equiv" content="Content-type: text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="demo.css" />
-    <link rel="stylesheet" type="text/css" href="ime.css" />
-</head>
-<body>
+    <div class="wrapper">
 
-    <div class="header">
-        <h1>Chinese Input Method</h1>
-        <h2>Free and Open Source</h2>
+      <section>
+        <div id="title">
+          <h1>Chinese-ime</h1>
+          <p>A JavaScript jQuery plugin for building Chinese keyboard input capabilities natively into a website</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/kuangwk">kuangwk</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+
     </div>
-    <div class="container">
-        <textarea class="chinese"></textarea>
-    </div>
-    <div class="footer">
-        <p>A Free, Easy-to-use, Online Chinese Input Method Editor for the Learner and Native Alike</p>
-        <p>Check out the <a href="https://github.com/hermanschaaf/chinese-ime">source</a> of this jQuery plugin at Github</p>
-        <p class="attribution"><a href="http://www.twitter.com/ironzeb"><img src="https://si0.twimg.com/profile_images/1385624901/ironzebra2_normal.png"/></a> Developed by Herman Schaaf (<a href="http://www.twitter.com/ironzeb">@ironzeb</a>)<br/>&copy; 2012 All rights reserved</p>
-    </div>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-    <!-- Load this script if you want traditional character support -->
-    <script type="text/javascript" charset="utf-8" src="trad_chars.js"></script>
-    <!-- Load this script if you want support for adding the text at the caret position -->
-    <script type="text/javascript" src="caret.js"></script>
-    <!-- The actual script -->
-    <script type="text/javascript" src="jQuery.chineseIME.js"></script>
-    
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $("textarea.chinese").chineseInput({
-            debug: false, // print debug messages
-            input: {
-                initial: 'traditional', // or 'simplified'
-                allowChange: true // allow transition between traditional and simplified
-            },
-            allowHide: true, // allow the chinese input to be switched off
-            active: true // whether or not the plugin should be active by default
-        });
-    });
-    </script>
-</body>
+  </body>
 </html>
