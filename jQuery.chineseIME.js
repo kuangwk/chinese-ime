@@ -169,6 +169,17 @@ var _callbacks_ = {
         if(!options || typeof options !== 'object') options = {};
 
          // Sanitize option data
+
+/*
+default option:
+  input = {
+    initial: 'simplified'    # simplified || tridition
+    allowChange: true        # allowChangeInputMethod
+  }
+  allowHide: true            # allow switch off chinese input method
+  active: true               # default status of chinese input: on or off
+*/ 
+
         if(typeof options.input !== 'object') options.input = {initial: 'simplified', allowChange: true};
         if(typeof options.input.initial !== 'string') options.input.initial = 'simplified';
         if(options.input.initial.toLowerCase() != 'simplified' && options.input.initial.toLowerCase() != 'traditional') options.input.initial = 'simplified';
@@ -191,7 +202,7 @@ var _callbacks_ = {
         
         // Add a reverse reference to the DOM object
         self.$el.data("chineseInput", self);
-        
+  
         self.init = function(){
             
             self.options = $.extend({},$.chineseInput.defaultOptions, options);
@@ -213,7 +224,10 @@ var _callbacks_ = {
                 var $hide = self.$active;
                 $hide.appendTo(self.$toolbar);
                 $hide.find('input').click(function(){
-                    self.options.active = $(this).is(':checked');
+                    var that = this
+                    setTimeout(function(){
+                      self.options.active = $(that).is(':checked');
+                    }, 10)
                     if (self.options.active === false){
                         self.currentText = '';
                         self.currentPage = 0;
@@ -221,7 +235,7 @@ var _callbacks_ = {
                     }
                     self.$el.focus();
                 });
-                $(document).on('keydown', function(event){
+                $(document).on('keyup', function(event){
                   if(event.keyCode === 16){
                     $hide.find('input').trigger('click')
                   }
@@ -373,7 +387,8 @@ var _callbacks_ = {
                 choice = choices[selectionIndex];
                 len = $.wordDatabase.getLength(self.currentText, selectionIndex);
                 self.addText(choice);
-                self.currentText = '' + self.currentText.substring(len);
+                // self.currentText = '' + self.currentText.substring(len);
+                self.currentText = '';
                 self.currentPage = 0;
                 self.currentSelection = 1;
                 self.lastPage = false;
